@@ -2,7 +2,10 @@
   <header id="header">
     <div class="header-container">
       <a href="#">
-        <img class="logo-img" :src="require(`@/assets/wisein_company.png`)" />
+        <img
+          class="logo-img"
+          :src="require(`@/assets/wisein_company.png`)"
+          @click="goHome()" />
         <!-- <v-img
           class="logo-img"
           src="../assets/wisein_company.png"
@@ -19,8 +22,14 @@
   </header>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { useRouter } from 'vue-router';
+const router = useRouter();
+const goHome = () => {
+  router.push({
+    path: '/',
+  });
+};
 </script>
 
 <style>
