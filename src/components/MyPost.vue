@@ -7,7 +7,7 @@
         cover
       ></v-img>
       <v-card-title>안녕하세요!</v-card-title>
-      <v-card-subtitle class="subTitle">짱구에오</v-card-subtitle>
+      <v-card-subtitle class="subTitle">안녕하세요</v-card-subtitle>
       <v-card-actions>
         <v-btn color="purple-lighten-2" variant="text"> Tech </v-btn>
         <v-spacer></v-spacer>
@@ -20,7 +20,7 @@
         cover
       ></v-img>
       <v-card-title>안녕하세요!</v-card-title>
-      <v-card-subtitle class="subTitle">짱구에오</v-card-subtitle>
+      <v-card-subtitle class="subTitle">안녕하세요</v-card-subtitle>
       <v-card-actions>
         <v-btn color="purple-lighten-2" variant="text"> Tech </v-btn>
         <v-spacer></v-spacer>
