@@ -7,7 +7,7 @@
       />
     </a>
     <div>
-      <span>© BIRDVIEW. ALL RIGHTS RESERVED.</span>
+      <span class="footer-fontcolor">© BIRDVIEW. ALL RIGHTS RESERVED.</span>
     </div>
     <div class="footer-icon-container">
       <ul class="footer-lists">
@@ -20,11 +20,6 @@
               class="footer-icon"
               :src="require(`@/assets/icon/youtube_icon.png`)"
             />
-            <!-- <v-img
-              class="footer-icon"
-              src="../assets/icon/youtube_icon.png"
-              alt="youtube"
-            ></v-img> -->
           </a>
         </li>
         <li>
@@ -36,11 +31,6 @@
               class="footer-icon"
               :src="require(`@/assets/icon/facebook_icon.png`)"
             />
-            <!-- <v-img
-              class="footer-icon"
-              src="../assets/icon/facebook_icon.png"
-              alt="facebook"
-            ></v-img> -->
           </a>
         </li>
         <li>
@@ -49,11 +39,6 @@
               class="footer-icon"
               :src="require(`@/assets/icon/instagram_icon.png`)"
             />
-            <!-- <v-img
-              class="footer-icon"
-              src="../assets/icon/instagram_icon.png"
-              alt="instagram"
-            ></v-img> -->
           </a>
         </li>
       </ul>
@@ -82,7 +67,11 @@ export default {};
   display: flex;
   list-style: none;
 }
+.footer-fontcolor {
+  color: #c8c8c8;
+}
 .footer-icon {
+  filter: opacity(20%);
   width: 36px;
 }
 .footer-lists li {
