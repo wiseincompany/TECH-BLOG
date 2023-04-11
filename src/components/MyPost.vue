@@ -3,7 +3,8 @@
     <v-card
       class="mx-auto rounded-xl"
       max-width="330"
-      min-width="330">
+      min-width="330"
+      @click="post01()">
       <v-img
         :src="require(`@/assets/2023/card_title05.jpg`)"
         height="240px"
@@ -27,7 +28,6 @@
         :src="require(`@/assets/2023/card_title04.jpg`)"
         height="240px"
         cover></v-img>
-
       <v-card-title>안녕하세요!</v-card-title>
       <v-card-subtitle class="subTitle">안녕하세요</v-card-subtitle>
       <v-card-actions>
@@ -99,8 +99,15 @@
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { useRouter } from 'vue-router';
+const router = useRouter();
+
+const post01 = () => {
+  router.push({
+    path: '/01',
+  });
+};
 </script>
 
 <style>
