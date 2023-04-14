@@ -1,6 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import ReactMarkdown from 'react-markdown'
 import Head from 'next/head'
+import Layout from '../../components/Layout'
 import NotionService from '../../services/notion-service'
 import rehypeStringify from 'rehype-stringify/lib'
 import remarkRehype from 'remark-rehype/lib'
@@ -20,13 +21,15 @@ const Post = ({ markdown, post }: InferGetStaticPropsType<typeof getStaticProps>
         <meta name={'og:image'} title={'og:image'} content={post?.cover} />
       </Head>
 
-      <div className="min-h-screen">
-        <main className="max-w-5xl mx-auto relative">
-          <div className="flex items-center justify-center">
-            <article className="prose" dangerouslySetInnerHTML={{ __html: markdown }}></article>
-          </div>
-        </main>
-      </div>
+      <Layout>
+        <div className="min-h-screen">
+          <main className="max-w-5xl mx-auto relative">
+            <div className="flex items-center justify-center">
+              <article className="prose" dangerouslySetInnerHTML={{ __html: markdown }}></article>
+            </div>
+          </main>
+        </div>
+      </Layout>
     </>
   )
 }
