@@ -6,7 +6,7 @@ import Youtube from '../public/images/youtube.png'
 export default function Footer() {
   return (
     <>
-      <footer className="text-gray-600 body-font pt-4">
+      <footer className=" text-gray-600 body-font pt-4 mt-[80px]">
         <div className="bg-gray-100">
           <div className="container flex justify-between p-8  mx-auto items-center sm:flex-row flex-col">
             <Link href="/" legacyBehavior>
