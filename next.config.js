@@ -2,7 +2,7 @@
 module.exports = {
   reactStrictMode: false,
   images: {
-    domains: ['s3.us-west-2.amazonaws.com'],
+    domains: ['www.notion.so', 'images.unsplash.com', 's3.us-west-2.amazonaws.com'],
     formats: ['image/avif', 'image/webp'],
   },
 }

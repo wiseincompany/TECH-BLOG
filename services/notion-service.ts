@@ -81,10 +81,9 @@ export default class NotionService {
       default:
         cover = ''
     }
-
     return {
       id: page.id,
-      cover: cover.url,
+      cover: cover?.url,
       title: page.properties.Name.title[0]?.plain_text,
       tags: page.properties.Tags?.multi_select,
       description: page.properties.Description.rich_text[0]?.plain_text,
