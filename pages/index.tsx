@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { BlogPost } from '../@types/schema'
 import BlogCard from '../components/BlogCard'
 import NotionService from '../services/notion-service'
-import Header from '../components/header'
+import Layout from '../components/Layout'
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const notionService = new NotionService()
@@ -22,26 +22,27 @@ const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name={'description'} title={'description'} content={description} />
-        <meta name={'og:title'} title={'og:title'} content={title} />
-        <meta name={'og:description'} title={'og:description'} content={title} />
-        <link href="/favicon.ico" rel="wisein" />
-      </Head>
+      <Layout>
+        <Head>
+          <title>{title}</title>
+          <meta name={'description'} title={'description'} content={description} />
+          <meta name={'og:title'} title={'og:title'} content={title} />
+          <meta name={'og:description'} title={'og:description'} content={title} />
+        </Head>
 
-      <div className="min-h-screen">
-        <main className="max-w-5xl mx-auto relative">
-          <div className="h-full pt-4 pb-16 mx-auto">
-            <Header />
-            <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-2 lg:max-w-none">
-              {posts.map((post: BlogPost) => (
-                <BlogCard key={post.id} post={post} />
-              ))}
+        <div className="min-h-screen">
+          <main className="max-w-5xl mx-auto relative">
+            <div className="h-full pt-4 pb-16 mx-auto">
+              {/* <Header /> */}
+              <div className="mt-12 max-w-lg mx-auto grid gap-8 lg:grid-cols-3 lg:max-w-none">
+                {posts.map((post: BlogPost) => (
+                  <BlogCard key={post.id} post={post} />
+                ))}
+              </div>
             </div>
-          </div>
-        </main>
-      </div>
+          </main>
+        </div>
+      </Layout>
     </>
   )
 }
