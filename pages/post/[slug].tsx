@@ -8,8 +8,10 @@ import remarkBreaks from 'remark-breaks'
 import remarkGfm from 'remark-gfm'
 import remarkParse from 'remark-parse/lib'
 import { unified } from 'unified'
+import Image from 'next/image'
 
 const Post = ({ markdown, post }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log(post)
   return (
     <>
       <Head>
@@ -23,9 +25,22 @@ const Post = ({ markdown, post }: InferGetStaticPropsType<typeof getStaticProps>
       <Layout>
         <div className="min-h-screen my-10">
           <main className="max-w-5xl mx-auto relative">
+            <h1 className="text-4xl font-bold flex items-center justify-center mb-10">{post.title}</h1>
+            <h4 className="text-s text-center font-medium text-gray-400">{post.date.substr(0, 10)}</h4>
+            <div className="text-center rounded-xl">
+              <Image objectFit="cover" src={post.cover} alt="" width={820} height={600} />
+            </div>
+            <div className=" text-center bg-slate-200 w-[80%] h-28 rounded-xl mx-auto mb-32 p-10">{post.description}</div>
             <div className="flex items-center justify-center">
               <article className="prose" dangerouslySetInnerHTML={{ __html: markdown }}></article>
             </div>
+            <span className="block ml-24 mt-32 space-x-4">
+              {post?.tags.map((tag: any) => (
+                <span key={tag.id} className="bg-blue-500 text-white px-2 py-1 text-xs rounded-lg">
+                  #{tag.name}
+                </span>
+              ))}
+            </span>
           </main>
         </div>
       </Layout>
