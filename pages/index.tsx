@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { BlogPost } from '../@types/schema'
 import BlogCard from '../components/BlogCard'
 import NotionService from '../services/notion-service'
-// import Header from '../components/header'
 import Layout from '../components/Layout'
 
 export const getStaticProps: GetStaticProps = async (context) => {

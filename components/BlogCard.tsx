@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react'
 import Link from 'next/link'
+
 import Image from 'next/image'
 
 import { BlogPost } from '../@types/schema'
@@ -12,7 +13,6 @@ const localizedFormat = require('dayjs/plugin/localizedFormat')
 dayjs.extend(localizedFormat)
 
 const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
-  console.log(post)
 
   return (
     <Link href={`/post/${post.slug}`}>
@@ -26,15 +26,12 @@ const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
               <span className="block mt-2">
                 <h3 className="text-xl font-semibold text-gray-900">{post.title}</h3>
               </span>
-
               <span className="block mt-2">
                 <p className="text-sm text-black">{post.description}</p>
               </span>
-
               <span className="block mt-2">
                 <h4 className="text-xs font-medium text-gray-400">{dayjs(post.date).format('LL')}</h4>
               </span>
-
               <span className="block mt-2 space-x-4">
                 {post?.tags.map((tag) => (
                   <span key={tag.id} className="bg-blue-500 text-white px-2 py-1 text-xs rounded-lg">
