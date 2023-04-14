@@ -14,7 +14,7 @@ const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
   return (
     <Link href={`/post/${post.slug}`}>
       <a className="transition duration-300 hover:scale-105">
-        <div key={post.title} className="flex flex-col rounded-xl shadow-lg overflow-hidden">
+        <div key={post.title} className="flex flex-col rounded-xl shadow-lg overflow-hidden h-[100%]">
           <div className="flex-shrink-0">
             <Image objectFit="cover" className="h-60 w-86 object-fit" src={post.cover} alt="" width={1000} height={700} />
           </div>
