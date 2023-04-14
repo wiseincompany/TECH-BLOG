@@ -1,5 +1,4 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import ReactMarkdown from 'react-markdown'
 import Head from 'next/head'
 import Layout from '../../components/Layout'
 import NotionService from '../../services/notion-service'
@@ -14,9 +13,9 @@ const Post = ({ markdown, post }: InferGetStaticPropsType<typeof getStaticProps>
   return (
     <>
       <Head>
-        <title>{post.title}</title>
+        <title>WISE TECH</title>
         <meta name={'description'} title={'description'} content={post.description} />
-        <meta name={'og:title'} title={'og:title'} content={post.title === undefined ? '제목 없음' : post.title} />
+        <meta name={'og:title'} title={'og:title'} content={post.title} />
         <meta name={'og:description'} title={'og:description'} content={post.description} />
         <meta name={'og:image'} title={'og:image'} content={post?.cover} />
       </Head>
