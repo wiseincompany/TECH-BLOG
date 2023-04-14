@@ -12,12 +12,14 @@ const localizedFormat = require('dayjs/plugin/localizedFormat')
 dayjs.extend(localizedFormat)
 
 const BlogCard: FunctionComponent<BlogCardProps> = ({ post }) => {
+  console.log(post)
+
   return (
     <Link href={`/post/${post.slug}`}>
       <a className="transition duration-300 hover:scale-105">
         <div key={post.title} className="flex flex-col rounded-xl shadow-lg overflow-hidden">
           <div className="flex-shrink-0">
-            <Image className="h-60 w-86 object-fit" src={post.cover} alt="" />
+            <Image objectFit="cover" className="h-60 w-86 object-fit" src={post.cover} alt="" width={1000} height={700} />
           </div>
           <div className="flex-1 bg-gray-50 pt-2 pb-6 px-4 flex flex-col justify-between">
             <div className="flex-1">
