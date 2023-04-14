@@ -1,11 +1,13 @@
 {
   "name": "notion-blog",
+  "homepage": "https://wiseincompany.github.io/Tech-Blog",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "@notionhq/client": "^0.4.12",

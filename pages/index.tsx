@@ -27,6 +27,7 @@ const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <meta name={'description'} title={'description'} content={description} />
         <meta name={'og:title'} title={'og:title'} content={title} />
         <meta name={'og:description'} title={'og:description'} content={title} />
+        <link href="/favicon.ico" rel="wisein" />
       </Head>
 
       <div className="min-h-screen">
