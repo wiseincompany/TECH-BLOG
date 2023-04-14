@@ -1,5 +1,6 @@
 import Link from 'next/link'
-// import Image from 'next/image'
+import Image from 'next/image'
+import Logo from '../public/images/main_footer-logo.png'
 
 export default function Footer() {
   return (
@@ -9,9 +10,7 @@ export default function Footer() {
           <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
             <Link href="/" legacyBehavior>
               <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                {/* <Image src={} alt="logo" /> */}
-
-                {/* <span className="ml-3 text-xl">기술블로그</span> */}
+                <Image src={Logo} alt="logo footer" />
               </a>
             </Link>
 

@@ -45,7 +45,6 @@ export default function Header() {
           <Link href="/" legacyBehavior>
             <a className="flex title-font font-medium items-center mb-4 md:mb-0">
               <Image src={wiseinLogo} alt="logo" />
-              {/* <span className="ml-3 text-xl">| 기술블로그</span> */}
             </a>
           </Link>
           <nav className="font-medium md:ml-auto flex flex-wrap items-center text-base justify-center">
@@ -57,7 +56,7 @@ export default function Header() {
               <a className="px-8 text-gray-900 hover:font-bold ">Contact</a>
             </Link>
           </nav>
-          <a href="https://datain.co.kr/guide/html/info.html" target="_blank">
+          <a href="https://datain.co.kr/guide/html/info.html">
             <button className="inline-flex items-center bg-gray-100 border-0 py-2 px-3 focus:outline-none hover:bg-gray-200 rounded-lg text-base ml- md:mt-0">
               와이즈인 홈페이지
               <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
