@@ -22,7 +22,7 @@ const Post = ({ markdown, post }: InferGetStaticPropsType<typeof getStaticProps>
       </Head>
 
       <Layout>
-        <div className="min-h-screen">
+        <div className="min-h-screen my-10">
           <main className="max-w-5xl mx-auto relative">
             <div className="flex items-center justify-center">
               <article className="prose" dangerouslySetInnerHTML={{ __html: markdown }}></article>
