@@ -8,7 +8,7 @@ export default function Header() {
       <header className="sticky top-0 z-10 w-full h-max border-b bg-white text-gray-600 body-font">
         <div className="container mx-auto flex flex-wrap flex-col md:flex-row items-center ">
           <Link href="/" legacyBehavior>
-            <a className="flex title-font font-medium items-center mb-4 md:mb-0">
+            <a className="flex title-font font-medium items-center mb-4 md:mb-0" target="_blank">
               <Image src={wiseinLogo} alt="logo" width={226} height={62} />
             </a>
           </Link>
