@@ -71,7 +71,6 @@ export default class NotionService {
 
   private static pageToPostTransformer(page: any): BlogPost {
     let cover = page.cover
-    console.log(cover)
     if (cover !== null) {
       switch (cover.type) {
         case 'file':
@@ -89,7 +88,7 @@ export default class NotionService {
       cover: cover === null ? null : cover?.url,
       title: page.properties.Name.title[0]?.plain_text,
       tags: page.properties.Tags?.multi_select,
-      description: page.properties.Description.rich_text[0]?.plain_text,
+      description: page.properties.Description.rich_text[0] === undefined ? ' ' : page.properties.Description.rich_text[0]?.plain_text,
       date: page.properties.Updated?.last_edited_time,
       slug: page.properties.Slug?.formula.string,
     }
