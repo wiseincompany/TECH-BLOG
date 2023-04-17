@@ -43,11 +43,6 @@ const Post = ({ markdown, post }: InferGetStaticPropsType<typeof getStaticProps>
             </span>
           </main>
         </div>
-        <style jsx>{`
-          .card__image {
-            width: 100%;
-          }
-        `}</style>
       </Layout>
     </>
   )
