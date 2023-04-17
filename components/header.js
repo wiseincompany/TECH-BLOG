@@ -9,7 +9,7 @@ export default function Header() {
         <div className="container mx-auto flex flex-wrap flex-col md:flex-row items-center ">
           <Link href="/" legacyBehavior>
             <a className="flex title-font font-medium items-center mb-4 md:mb-0">
-              <Image src={wiseinLogo} alt="logo" width={226} height={62} />
+              <Image priority src={wiseinLogo} alt="logo" width={226} height={62} />
             </a>
           </Link>
           <nav className="font-medium md:ml-auto flex flex-wrap items-center text-base justify-center">

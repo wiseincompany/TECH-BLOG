@@ -5,6 +5,10 @@ import BlogCard from '../components/BlogCard'
 import NotionService from '../services/notion-service'
 import Layout from '../components/Layout'
 
+// import Pagination from '../components/pagination'
+// import { useState } from 'react'
+// import Pagination from 'react-js-pagination'
+
 export const getStaticProps: GetStaticProps = async (context) => {
   const notionService = new NotionService()
   const posts = await notionService.getPublishedBlogPosts()
@@ -17,8 +21,19 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  // console.log(posts)
+
   const title = 'WISE TECH'
   const description = '와이즈인 컴퍼니 기술블로그'
+
+  // const [currentPage, setCurrentPage] = useState(1)
+  // const pageSize = 9
+
+  // const onPageChange = (page) => {
+  //   setCurrentPage(page)
+  // }
+
+  // const paginatedPosts = paginate(data, currentPage, pageSize)
 
   return (
     <>
@@ -38,6 +53,13 @@ const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
                 {posts.map((post: BlogPost) => (
                   <BlogCard key={post.id} post={post} />
                 ))}
+
+                {/* <Pagination
+                  items={posts.length} // 100
+                  currentPage={currentPage} // 1
+                  pageSize={pageSize} // 9
+                  onPageChange={onPageChange}
+                /> */}
               </div>
             </div>
           </main>
