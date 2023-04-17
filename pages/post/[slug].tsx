@@ -9,7 +9,7 @@ import remarkGfm from 'remark-gfm'
 import remarkParse from 'remark-parse/lib'
 import { unified } from 'unified'
 import Image from 'next/image'
-import '../../styles/Home.module.css'
+import NotFound from '../../public/default.png'
 
 const Post = ({ markdown, post }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const result = markdown.replace(/img/g, 'img style="margin: auto; object-fit: cover; image-rendering: -webkit-optimize-contrast; transform: translateZ(0); backface-visibility: hidden; "')
@@ -20,7 +20,7 @@ const Post = ({ markdown, post }: InferGetStaticPropsType<typeof getStaticProps>
         <meta name={'description'} title={'description'} content={post.description} />
         <meta name={'og:title'} title={'og:title'} content={post.title} />
         <meta name={'og:description'} title={'og:description'} content={post.description} />
-        <meta name={'og:image'} title={'og:image'} content={post?.cover} />
+        <meta name={'og:image'} title={'og:image'} content={post.cover === null ? NotFound : post?.cover} />
       </Head>
 
       <Layout>
@@ -29,7 +29,7 @@ const Post = ({ markdown, post }: InferGetStaticPropsType<typeof getStaticProps>
             <h1 className="text-4xl font-bold flex items-center justify-center mb-10">{post.title}</h1>
             <h4 className="text-s text-center font-medium mb-10 text-gray-400">{post.date.substr(0, 10)}</h4>
             <div className="text-center mb-20">
-              <Image priority className="rounded-xl align-top card__image" objectFit="contain" src={post.cover} alt="" width={700} height={500} quality={100} />
+              <Image priority className="rounded-xl align-top card__image" objectFit="contain" src={post.cover === null ? NotFound : post?.cover} alt="" width={700} height={500} quality={100} />
             </div>
             <div className="flex items-center justify-center">
               <article className="prose w-[100%]" dangerouslySetInnerHTML={{ __html: result }}></article>
@@ -55,7 +55,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   if (!p) {
     throw ''
   }
-  console.log(p)
   const load = await unified()
     .use(remarkParse) // markdown을 mdast로 변환
     .use(remarkGfm) // remark가 GFM도 지원 가능하도록
