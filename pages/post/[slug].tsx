@@ -11,7 +11,7 @@ import { unified } from 'unified'
 import Image from 'next/image'
 
 const Post = ({ markdown, post }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(post)
+  const result = markdown.replace(/img/g, 'img style="margin: auto"')
   return (
     <>
       <Head>
@@ -28,11 +28,10 @@ const Post = ({ markdown, post }: InferGetStaticPropsType<typeof getStaticProps>
             <h1 className="text-4xl font-bold flex items-center justify-center mb-10">{post.title}</h1>
             <h4 className="text-s text-center font-medium mb-10 text-gray-400">{post.date.substr(0, 10)}</h4>
             <div className="text-center mb-20">
-              <Image className="rounded-xl" objectFit="cover" src={post.cover} alt="" width={820} height={600} />
+              <Image className="rounded-xl" objectFit="cover" src={post.cover} alt="" width={700} height={600} />
             </div>
-            <div className=" text-center bg-slate-200 w-[80%] h-28 rounded-xl mx-auto mb-32 p-10">{post.description}</div>
             <div className="flex items-center justify-center">
-              <article className="prose" dangerouslySetInnerHTML={{ __html: markdown }}></article>
+              <article className="prose w-[100%]" dangerouslySetInnerHTML={{ __html: result }}></article>
             </div>
             <span className="block ml-24 mt-32 space-x-4">
               {post?.tags.map((tag: any) => (
