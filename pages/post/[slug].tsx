@@ -55,6 +55,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   if (!p) {
     throw ''
   }
+  console.log(p)
   const load = await unified()
     .use(remarkParse) // markdown을 mdast로 변환
     .use(remarkGfm) // remark가 GFM도 지원 가능하도록
