@@ -26,9 +26,9 @@ const Post = ({ markdown, post }: InferGetStaticPropsType<typeof getStaticProps>
         <div className="min-h-screen my-10">
           <main className="max-w-5xl mx-auto relative">
             <h1 className="text-4xl font-bold flex items-center justify-center mb-10">{post.title}</h1>
-            <h4 className="text-s text-center font-medium text-gray-400">{post.date.substr(0, 10)}</h4>
-            <div className="text-center rounded-xl">
-              <Image objectFit="cover" src={post.cover} alt="" width={820} height={600} />
+            <h4 className="text-s text-center font-medium mb-10 text-gray-400">{post.date.substr(0, 10)}</h4>
+            <div className="text-center mb-20">
+              <Image className="rounded-xl" objectFit="cover" src={post.cover} alt="" width={820} height={600} />
             </div>
             <div className=" text-center bg-slate-200 w-[80%] h-28 rounded-xl mx-auto mb-32 p-10">{post.description}</div>
             <div className="flex items-center justify-center">
