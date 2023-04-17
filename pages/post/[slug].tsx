@@ -29,7 +29,7 @@ const Post = ({ markdown, post }: InferGetStaticPropsType<typeof getStaticProps>
             <h1 className="text-4xl font-bold flex items-center justify-center mb-10">{post.title}</h1>
             <h4 className="text-s text-center font-medium mb-10 text-gray-400">{post.date.substr(0, 10)}</h4>
             <div className="text-center mb-20">
-              <Image className="rounded-xl align-top card__image" priority objectFit="contain" src={post.cover} alt="" width={700} height={500} quality={100} />
+              <Image className="rounded-xl align-top" priority objectFit="contain" src={post.cover} alt="" width={700} height={500} quality={100} />
             </div>
             <div className="flex items-center justify-center">
               <article className="prose w-[100%]" dangerouslySetInnerHTML={{ __html: result }}></article>
@@ -43,11 +43,6 @@ const Post = ({ markdown, post }: InferGetStaticPropsType<typeof getStaticProps>
             </span>
           </main>
         </div>
-        <style jsx>{`
-          .card__image {
-            width: 100%;
-          }
-        `}</style>
       </Layout>
     </>
   )

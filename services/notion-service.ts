@@ -76,7 +76,7 @@ export default class NotionService {
         cover = page.cover.file
         break
       case 'external':
-        cover = page.cover.external.url
+        cover = page.cover.external
         break
       default:
         cover = ''
